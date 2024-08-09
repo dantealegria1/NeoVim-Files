@@ -46,5 +46,10 @@ keymap.set("n", "<leader>gfc", "<cmd>Telescope git_bcommits<cr>") -- list git co
 keymap.set("n", "<leader>gb", "<cmd>Telescope git_branches<cr>") -- list git branches (use <cr> to checkout) ["gb" for git branch]
 keymap.set("n", "<leader>gs", "<cmd>Telescope git_status<cr>") -- list current changes per file with diff preview ["gs" for git status]
 
+-- or create a vim command
+vim.api.nvim_create_user_command('FTermOpen', require('FTerm').open, { bang = true })
+vim.api.nvim_create_user_command('FTermClose', require('FTerm').close, { bang = true })
+vim.api.nvim_create_user_command('FTermExit', require('FTerm').exit, { bang = true })
 
-keymap.set('n', '<leader-te>', '<cmd>ToggleTerm<cr>')
+keymap.set('n', '<leader>te', '<cmd>FTermOpen<CR>', { noremap = true, silent = true })
+keymap.set('n', '<leader>tc', '<cmd>FTermClose<CR>', { noremap = true, silent = true })

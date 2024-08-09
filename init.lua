@@ -12,3 +12,7 @@ require('dante.plugins.treesitter')
 require('dante.plugins.autopairs')
 require('dante.plugins.gitsigns')
 require('dante.plugins.Floating')
+require('dante.plugins.scroll')
+
+
+

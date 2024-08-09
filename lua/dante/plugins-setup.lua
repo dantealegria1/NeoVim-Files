@@ -68,7 +68,16 @@ return packer.startup(function(use)
   use 'numToStr/FTerm.nvim'
   use {"akinsho/toggleterm.nvim", tag = '*', config = function()
   require("toggleterm").setup()
-end}
+        end}
+  --Startup
+use {
+    'goolord/alpha-nvim',
+    config = function ()
+        require'alpha'.setup(require'alpha.themes.dashboard'.config)
+    end
+}
+  --Scrolling
+use "declancm/cinnamon.nvim"
 if packer_bootstrap then
     require("packer").sync()
   end
